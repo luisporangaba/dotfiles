@@ -1,7 +1,7 @@
 #!/bin/bash
 # Check if IPv6 changed since last boot
 
-IFACE="wlp3s0"
+IFACE="enp5s0"
 STATEFILEDIR="$HOME/.local/state/"
 STATEFILE="$HOME/.local/state/last_ipv6_state"
 

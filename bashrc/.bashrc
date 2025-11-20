@@ -76,8 +76,8 @@ if [ -d "$HOME/.cargo/bin/" ] ;
 fi
 
 # Neovim binary:
-if [ -d "$HOME/Builds/nvim/neovim_install/bin" ] ;
-  then PATH="$HOME/Builds/nvim/neovim_install/bin:$PATH"
+if [ -d "$HOME/Builds/nvim/neovim_build/bin" ] ;
+  then PATH="$HOME/Builds/nvim/neovim_build/bin:$PATH"
 fi
 
 # Spark----------------------------------------------------------
@@ -103,7 +103,11 @@ if [ -z "$PYSPARK_DRIVER_PYTHON_OPTS" ] ; then
 fi
 # ------------------------------------------------
 
+# allow global package installations for the current user
+export npm_config_prefix="$HOME/.local"
+
 # Clean-up:
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export LESSHISTFILE="$XDG_STATE_HOME/less/history"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
